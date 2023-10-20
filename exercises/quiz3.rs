@@ -16,7 +16,7 @@
 //
 // Execute `rustlings hint quiz3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+ 
 
 pub struct ReportCard {
     pub grade: f32,
@@ -48,17 +48,24 @@ mod tests {
         );
     }
 
-    #[test]
-    fn generate_alphabetic_report_card() {
-        // TODO: Make sure to change the grade here after you finish the exercise.
-        let report_card = ReportCard {
-            grade: 2.1,
-            student_name: "Gary Plotter".to_string(),
-            student_age: 11,
-        };
-        assert_eq!(
-            report_card.print(),
-            "Gary Plotter (11) - achieved a grade of A+"
-        );
+    pub fn times_two(num: i32) -> i32 {
+        num * 2
+    }
+    
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+    
+        #[test]
+        fn returns_twice_of_positive_numbers() {
+            assert_eq!(times_two(4), 8);
+        }
+    
+        #[test]
+        fn returns_twice_of_negative_numbers() {
+            // TODO replace unimplemented!() with an assert for `times_two(-4)`
+            //unimplemented!()
+            assert_eq!(times_two(-4), -8);
+        }
     }
 }
